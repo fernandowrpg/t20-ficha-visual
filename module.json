@@ -1,0 +1,29 @@
+{
+  "id": "t20-ficha-visual",
+  "title": "T20 - Visual da Ficha",
+  "description": "Melhora o visual da ficha de jogador do Tormenta20 usando apenas CSS.",
+  "version": "1.0.2",
+  "authors": [{ "name": "fernandowrpg" }],
+  "license": "LICENSE",
+  "readme": "https://github.com/fernandowrpg/t20-ficha-visual/blob/main/README.md",
+  "url": "https://github.com/fernandowrpg/t20-ficha-visual",
+  "manifest": "https://github.com/fernandowrpg/t20-ficha-visual/releases/latest/download/module.json",
+  "download": "https://github.com/fernandowrpg/t20-ficha-visual/releases/download/v1.0.2/module.zip",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.351"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "tormenta20",
+        "type": "system",
+        "compatibility": {
+          "minimum": "1.5.015",
+          "verified": "1.5.015"
+        }
+      }
+    ]
+  },
+  "styles": ["styles/ficha.css"]
+}

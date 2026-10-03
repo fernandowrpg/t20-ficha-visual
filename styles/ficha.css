@@ -1,0 +1,172 @@
+/* T20 - Visual da Ficha | só CSS. Ajuste as cores nas variáveis abaixo. */
+
+.tormenta20.sheet.actor {
+  --t20v-bg: #1c1813;
+  --t20v-panel: #27211a;
+  --t20v-panel-2: #312920;
+  --t20v-border: #4d3f2d;
+  --t20v-accent: #c9a24a;
+  --t20v-accent-2: #9b3434;
+  --t20v-text: #eadfcc;
+  --t20v-muted: #a89a82;
+  --t20v-radius: 6px;
+  --t20v-racial: #7fa58c;
+  --t20v-bonus: #c27b52;
+}
+
+/* Janela */
+.tormenta20.sheet.actor {
+  border: 1px solid var(--t20v-border);
+  border-radius: var(--t20v-radius);
+  box-shadow: 0 0 18px #000c;
+}
+.tormenta20.sheet.actor .window-header {
+  background: linear-gradient(90deg, var(--t20v-accent-2), #4a1a1a);
+  border-bottom: 2px solid var(--t20v-accent);
+  color: var(--t20v-text);
+}
+.tormenta20.sheet.actor .window-content {
+  background: var(--t20v-bg);
+  color: var(--t20v-text);
+  padding: 8px;
+}
+
+/* Textos e títulos */
+.tormenta20.sheet.actor :is(h1, h2, h3, h4) {
+  color: var(--t20v-accent);
+  border-bottom: 1px solid var(--t20v-border);
+  text-shadow: none;
+  letter-spacing: .04em;
+}
+.tormenta20.sheet.actor :is(label, .label) {
+  color: var(--t20v-muted);
+}
+
+/* Cabeçalho e painéis */
+.tormenta20.sheet.actor :is(.sheet-header, .header-fields, .resources, .attributes, .abilities, .skills, .sheet-body > .tab) {
+  background: var(--t20v-panel);
+  border-radius: var(--t20v-radius);
+}
+.tormenta20.sheet.actor .profile-img,
+.tormenta20.sheet.actor img.profile {
+  border: 2px solid var(--t20v-accent);
+  border-radius: var(--t20v-radius);
+  box-shadow: 0 0 8px #0009;
+}
+
+/* Campos */
+.tormenta20.sheet.actor :is(input[type="text"], input[type="number"], select, textarea) {
+  background: var(--t20v-panel-2);
+  color: var(--t20v-text);
+  border: 1px solid var(--t20v-border);
+  border-radius: 4px;
+  box-shadow: none;
+}
+.tormenta20.sheet.actor :is(input, select, textarea):focus {
+  border-color: var(--t20v-accent);
+  outline: none;
+  box-shadow: 0 0 5px var(--t20v-accent);
+}
+.tormenta20.sheet.actor option {
+  background: var(--t20v-panel);
+  color: var(--t20v-text);
+}
+
+/* Abas */
+.tormenta20.sheet.actor :is(.sheet-tabs, nav.tabs) {
+  border-top: 1px solid var(--t20v-border);
+  border-bottom: 1px solid var(--t20v-border);
+}
+.tormenta20.sheet.actor :is(.sheet-tabs, nav.tabs) :is(.item, a) {
+  color: var(--t20v-muted);
+  transition: color .15s, background .15s;
+}
+.tormenta20.sheet.actor :is(.sheet-tabs, nav.tabs) :is(.item, a):hover {
+  color: var(--t20v-text);
+  text-shadow: none;
+}
+.tormenta20.sheet.actor :is(.sheet-tabs, nav.tabs) :is(.item, a).active {
+  color: var(--t20v-accent);
+  border-bottom: 2px solid var(--t20v-accent);
+  text-shadow: none;
+}
+
+/* Listas de itens, perícias, magias */
+.tormenta20.sheet.actor :is(li.item, .item-list .item, .items-list .item) {
+  border-bottom: 1px solid var(--t20v-border);
+  border-radius: 3px;
+  transition: background .15s;
+}
+.tormenta20.sheet.actor :is(li.item, .item-list .item, .items-list .item):hover {
+  background: var(--t20v-panel-2);
+}
+.tormenta20.sheet.actor :is(.item-header, .items-header) {
+  background: var(--t20v-panel-2);
+  color: var(--t20v-accent);
+  border: 1px solid var(--t20v-border);
+  border-radius: 4px;
+}
+
+/* Botões */
+.tormenta20.sheet.actor :is(button, .rollable, .item-control) {
+  color: var(--t20v-text);
+  transition: color .15s, text-shadow .15s;
+}
+.tormenta20.sheet.actor button {
+  background: var(--t20v-panel-2);
+  border: 1px solid var(--t20v-border);
+  border-radius: 4px;
+}
+.tormenta20.sheet.actor button:hover {
+  border-color: var(--t20v-accent);
+  box-shadow: 0 0 5px var(--t20v-accent);
+}
+.tormenta20.sheet.actor :is(.rollable, .item-control):hover {
+  color: var(--t20v-accent);
+  text-shadow: 0 0 6px var(--t20v-accent);
+}
+
+/* Barras de PV/PM (se forem <progress> ou .bar) */
+.tormenta20.sheet.actor :is(.bar, progress) {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Barra de rolagem */
+.tormenta20.sheet.actor *::-webkit-scrollbar { width: 8px; height: 8px; }
+.tormenta20.sheet.actor *::-webkit-scrollbar-track { background: var(--t20v-bg); }
+.tormenta20.sheet.actor *::-webkit-scrollbar-thumb {
+  background: var(--t20v-border);
+  border-radius: 4px;
+}
+.tormenta20.sheet.actor *::-webkit-scrollbar-thumb:hover { background: var(--t20v-accent); }
+
+/* Atributos: campos compactos, sem caixa, só com linha embaixo.
+   Cada input é independente, então funciona com qualquer quantidade de campos. */
+.tormenta20.sheet.actor input[name^="system.atributos."] {
+  background: transparent;
+  color: var(--t20v-text);
+  border: 0;
+  border-bottom: 1px solid var(--t20v-border);
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 0;
+  text-align: center;
+}
+/* Cada tipo de campo ganha uma cor de linha própria */
+.tormenta20.sheet.actor input[name^="system.atributos."][name$=".racial"] {
+  border-bottom-color: var(--t20v-racial);
+}
+.tormenta20.sheet.actor input[name^="system.atributos."][name$=".bonus"] {
+  border-bottom-color: var(--t20v-bonus);
+}
+.tormenta20.sheet.actor input[name^="system.atributos."]:hover {
+  background: var(--t20v-panel-2);
+}
+.tormenta20.sheet.actor input[name^="system.atributos."]:focus {
+  background: var(--t20v-panel-2);
+  border-bottom-color: var(--t20v-accent);
+  box-shadow: none;
+}
